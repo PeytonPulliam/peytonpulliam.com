@@ -5,6 +5,7 @@
     font-size: 50px;
 }
 #logo1 {
-            color: "tomato";
-            
+        display: flex;
+        justify-content: center;
+        text-align: center;    
         }
