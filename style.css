@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-size: 50px;
 }
-#logo1 {
+code {
         display: flex;
         justify-content: center;
         text-align: center;    
