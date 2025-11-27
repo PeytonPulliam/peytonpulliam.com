@@ -1,0 +1,24 @@
+{
+    "cSpell.words": [
+        "addvideobutton",
+        "Deadlifts",
+        "Delt",
+        "Flyes",
+        "Glute",
+        "Glutes",
+        "logbookmain",
+        "logbooktest",
+        "logmenu",
+        "mundy",
+        "musclegroups",
+        "smth",
+        "tracknest"
+    ],
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.allowGuestTaskControl": true,
+    "liveshare.alwaysFollowHost": true,
+    "liveshare.guestApprovalRequired": true,
+    "liveshare.languages.allowGuestCommandControl": true,
+    "liveshare.launcherClient": "visualStudioCode",
+    "liveshare.diagnosticLogging": true
+}

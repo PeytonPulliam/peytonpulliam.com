@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X's Logbook</title>
+    <link rel="stylesheet" href="/css/logbookmain.css">
+    <script src="main.js" defer></script>
+</head>
+<body> 
+    <a href="/html/logbooktest.html">visit test</a>
+ <h1> <ul id="user"></ul>'s Logbook</h1>
+ <h2>Your Machines</h2>
+    <ul id="machine-list">
+            <!-- Machine entries will be dynamically added here -->
+        </ul>
+<h2>Previous Workouts</h2>
+        <h3>Current Split: 
+            <ul id="current-split"></ul>
+        </h3>
+        <ul id="workout-list">
+            <!-- Workout entries will be dynamically added here -->
+        </ul>
+<h2>Your Form Grades</h2>
+        <ul id="form-grade-list">
+            <!-- Form grade entries will be dynamically added here -->
+        </ul>
+<div class="logmenu"></div>
+        <div class="plus top"></div>
+        <div class="plus side"></div>
+        <button class="addlogbutton" onclick="openLogForm()"><p>Log Weight</p></button>
+        <button class="addmachine" onclick="openLogForm()"><p>Log your new machine</p></button>
+        <button class="addvideobutton" onclick="openLogForm()"><p>Form Check AI</p></button>
+</body>
+</html>

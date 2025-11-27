@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Germania+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body {
+ background-color: black;
+}
+h1 {
+    color: white;
+    font-family: 'Inter', serif;
+}
+h2 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+h3 {
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+p {
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+.image{
+    text-align: justify;
+    width: 500px;
+    justify-items: start;
+    display: block;
+    margin: 0 auto;
+    align-items:first baseline;
+}
