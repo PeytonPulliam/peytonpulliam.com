@@ -1,80 +1,130 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Germania+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 body {
  background-color: black;
-}
-.plus {
-  position:fixed;
-  border: 1px rgb(255, 255, 255);
-  width: 44px;
-  height: 8px;
-  background-color: rgb(0, 0, 0);
+ justify-content: center;
+ align-items: center;
 }
 
-.top {
-  bottom: 46.5px;
-  left: 1457.5px;
-  transform: rotate(90deg);
-}
-
-.side {
-  bottom: 46.5px;
-  left: 1457.5px;
-}
-
-.logmenu {
-    height: 60px;
-    width: 60px;
-    background-color: rgb(255, 255, 255);
-    border: 1.67px solid black;
-    border-radius: 20px;
-    padding-top: 5px;
-    bottom: 18px;
-    right: 26px;
+.fab-wrapper {
     position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
 }
 
-.addlogbutton {
-    padding: 10px 20px;
-    background-color: #e44a1b;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 5px;
+.fab-button {
+    width: 65px;
+    height: 65px;
+    background: #00eaff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    box-shadow: 0 0 15px #00eaff88;
+    transition: 0.3s ease;
 }
-.addmachine {
-    padding: 10px 20px;
-    background-color: #e44a1b;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+.fab-button:hover {
+    box-shadow: 0 0 22px #00eaff;
 }
-.addvideobutton {
-    padding: 10px 20px;
-    background-color: #e44a1b;
+
+.fab-plus {
+    position: relative;
+    width: 35px;
+    height: 35px;
+}
+
+.fab-plus::before,
+.fab-plus::after {
+    content: "";
+    position: absolute;
+    background: black;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+.fab-plus::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    transform: translateY(-50%);
+}
+
+.fab-plus::after {
+    left: 50%;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+/*.fab-wrapper.active .fab-plus::before {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.fab-wrapper.active .fab-plus::after {
+    transform: translateX(-50%) rotate(-45deg);
+}
+*/
+.fab-menu {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    background: #111;
+    border: 2px solid #00eaff;
+    border-radius: 10px;
+    width: 180px;
+    padding: 10px 0;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 0 15px #00eaff55;
+}
+
+.fab-wrapper.active .fab-menu {
+    display: flex;
+}
+
+.fab-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    transition: 0.25s;
+}
+
+.fab-menu a:hover {
+    background: #00eaff;
     color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.hidden {
-    display: none; /* Hides the button by default */
 }
 
 h1 {
     color: white;
     font-family: 'Aldrich', serif;
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-weight: bold;
 }
 h2 {
     color: white;
     font-family: 'Aldrich', sans-serif;
+        text-align: center;
+    margin: 20px 0 30px 0;
+    font-weight: bold;
 }
 h3 {
     color: white;
     font-family: 'Aldrich', sans-serif;
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-weight: bold;
 }
 p {
     color: white;
     font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-weight: bold;
 }
+

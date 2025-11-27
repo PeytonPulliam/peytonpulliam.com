@@ -1,35 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X's Logbook</title>
-    <link rel="stylesheet" href="/css/logbookmain.css">
-    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="/css/logbooktest.css">
 </head>
 <body> 
-    <a href="/html/logbooktest.html">visit test</a>
  <h1> <ul id="user"></ul>'s Logbook</h1>
  <h2>Your Machines</h2>
+    <h3>NOTICE: YOU ARE IN THE TEST BUILD</h3>
+    <a href="/html/logbookmain.html">visit main</a>
+    <a href="/html/imagelist.html">visit image gallery</a>
     <ul id="machine-list">
-            <!-- Machine entries will be dynamically added here -->
         </ul>
 <h2>Previous Workouts</h2>
         <h3>Current Split: 
+    <!-- uncle put sum cards here that take inputs from current split and display on the card-->
             <ul id="current-split"></ul>
         </h3>
         <ul id="workout-list">
-            <!-- Workout entries will be dynamically added here -->
         </ul>
 <h2>Your Form Grades</h2>
+        <!-- uncle put sum cards here that take inputs from form grade list and display on the card-->
         <ul id="form-grade-list">
-            <!-- Form grade entries will be dynamically added here -->
         </ul>
-<div class="logmenu"></div>
-        <div class="plus top"></div>
-        <div class="plus side"></div>
-        <button class="addlogbutton" onclick="openLogForm()"><p>Log Weight</p></button>
-        <button class="addmachine" onclick="openLogForm()"><p>Log your new machine</p></button>
-        <button class="addvideobutton" onclick="openLogForm()"><p>Form Check AI</p></button>
+
+
+<div class="fab-wrapper">
+    <div class="fab-button">
+        <div class="fab-plus"></div>
+    </div>
+
+    <div class="fab-menu">
+        <a href="/menus/tracker.html"><h2>Log Exercise</h2></a>
+        <a href="/html/Machines.html"><h2>Log New Machines</h2></a>
+        <a href="/html/FormCheckAI.html"><h2>Form Check AI</h2></a>
+    </div>
+    
+</div>
+
+<script>
+document.querySelector('.fab-button').addEventListener('click', () => {
+    document.querySelector('.fab-wrapper').classList.toggle('active');
+});
+</script>
 </body>
 </html>
