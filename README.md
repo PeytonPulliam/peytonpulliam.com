@@ -1,7 +1,7 @@
-<h1 align="center">Hi, I'm Peyton</h1>
+<h1 align="center">Peyton Pulliam</h1>
 
 <p align="center">
-  <b>Security & data engineer</b>
+  <b>Data Engineer @ U.S. Air Force</b>
 </p>
 
 <p align="center">
@@ -13,9 +13,8 @@
 
 ## About me
 
--  Background in **offensive security and networking**, now focused on **security data engineering** and **cloud security**
--  Incoming Data Engineer @ U.S. Air Force 
--  
+-  Currently learning cloud security, networking, and software development.
+
 ## Certifications
 
 | Certification | Issuer | Status |
