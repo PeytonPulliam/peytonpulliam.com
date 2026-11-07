@@ -6,18 +6,16 @@
 
 <p align="center">
   <a href="https://peytonpulliam.com"><img src="https://img.shields.io/badge/Website-peytonpulliam.com-0A66C2?style=flat-square&logo=googlechrome&logoColor=white" alt="Website"></a>
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://www.linkedin.com/in/peyton-pulliam-132690352/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
 
 ---
 
 ## About me
 
-- 🔐 Background in **offensive security and networking**, now focused on **security data engineering** and **cloud security**
-- 🇺🇸 Incoming **U.S. Air Force** data engineer (starting December 2026)
-- 🛠️ I build systems the way production teams do: infrastructure as code, CI on every change, written decision records, and published numbers
-- 🎯 Interested in AI security, abuse detection, and privacy infrastructure at scale
-
+-  Background in **offensive security and networking**, now focused on **security data engineering** and **cloud security**
+-  Incoming Data Engineer @ U.S. Air Force 
+-  
 ## Certifications
 
 | Certification | Issuer | Status |
@@ -28,8 +26,6 @@
 | **CompTIA Security+** | CompTIA | ![In progress](https://img.shields.io/badge/-In%20progress-D29922?style=flat-square) |
 
 ## Projects
-
-Four connected projects on one shared AWS foundation. Each one tackles an open problem in AI and data security, using synthetic data and infrastructure I own.
 
 | # | Project | What it does | Status |
 | --- | --- | --- | --- |
