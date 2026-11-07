@@ -1,7 +1,7 @@
-<h1 align="center">Hi, I'm Peyton 👋</h1>
+<h1 align="center">Hi, I'm Peyton</h1>
 
 <p align="center">
-  <b>Security & data engineer</b> building detection pipelines, cloud guardrails, and privacy infrastructure, all measured and all tested.
+  <b>Security & data engineer</b>
 </p>
 
 <p align="center">
