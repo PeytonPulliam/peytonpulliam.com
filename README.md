@@ -1,170 +1,108 @@
-<div align="center">
+<h1 align="center">Hi, I'm Peyton 👋</h1>
 
-# Peyton Pulliam
+<p align="center">
+  <b>Security & data engineer</b> building detection pipelines, cloud guardrails, and privacy infrastructure, all measured and all tested.
+</p>
 
-### Data Engineer &nbsp;·&nbsp; Cybersecurity &nbsp;·&nbsp; Network Engineering
-
-<a href="https://peytonpulliam.com">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=3200&pause=900&color=38BDF8&center=true&vCenter=true&width=640&lines=Building+secure%2C+scalable+data+pipelines+on+AWS;Defending+systems+from+the+packet+up;Low-level+roots.+Cloud-scale+engineering." alt="Typing headline" />
-</a>
-
-<br/>
-
-[![Website](https://img.shields.io/badge/peytonpulliam.com-0D1117?style=for-the-badge&logo=googlechrome&logoColor=38BDF8)](https://peytonpulliam.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=38BDF8)](https://www.linkedin.com/in/YOUR_LINKEDIN)
-[![Email](https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=38BDF8)](mailto:YOUR_EMAIL)
-
-</div>
+<p align="center">
+  <a href="https://peytonpulliam.com"><img src="https://img.shields.io/badge/Website-peytonpulliam.com-0A66C2?style=flat-square&logo=googlechrome&logoColor=white" alt="Website"></a>
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+</p>
 
 ---
 
-## About
+## About me
 
-I work where three disciplines meet: **moving data**, **securing it**, and **understanding the networks it travels across**. Most engineers specialize in one. I build with all three in mind from the first design decision.
-
-My foundation is low-level. Writing C, C++, and Assembly taught me how memory, processes, and packets actually behave, and that understanding carries straight into the cloud. The pipelines I design are fast, observable, and **secure by default**, not patched up after the fact.
-
-- **Now:** earning AWS certifications on the Data Engineer track
-- **Focus:** cloud-native data platforms with security built into the architecture
-- **Ask me about:** pipeline design, AWS networking, threat modeling, or how a packet really gets from A to B
-
----
-
-## What I Do
-
-<table>
-<tr>
-<td width="33%" valign="top">
-
-### Data Engineering
-- Batch and streaming ETL / ELT pipelines
-- Data lake and warehouse design on AWS
-- Data modeling, partitioning, and query tuning
-- Orchestration, monitoring, and data quality checks
-- Python and SQL transformations at scale
-
-</td>
-<td width="33%" valign="top">
-
-### Cybersecurity
-- Secure architecture and threat modeling
-- Vulnerability assessment and penetration testing
-- IAM least privilege, encryption in transit and at rest
-- Log analysis and detection engineering
-- Binary and low-level analysis (C / Assembly)
-
-</td>
-<td width="33%" valign="top">
-
-### Networking
-- TCP/IP, the OSI model, subnetting and CIDR
-- Routing, switching, VLANs, and firewalls
-- AWS VPC design: subnets, security groups, NACLs, VPN
-- Packet capture and analysis
-- DNS, DHCP, and load balancing
-
-</td>
-</tr>
-</table>
-
----
-
-## Tech Stack
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=py,c,cpp,js,ts,html,css&theme=dark" alt="Languages" />
-<br/><br/>
-<img src="https://skillicons.dev/icons?i=aws,postgres,mysql,mongodb,docker,kubernetes,terraform&theme=dark" alt="Cloud and data" />
-<br/><br/>
-<img src="https://skillicons.dev/icons?i=linux,kali,bash,powershell,git,github,githubactions&theme=dark" alt="Systems and tooling" />
-<br/><br/>
-<img src="https://skillicons.dev/icons?i=vue,angular,nodejs&theme=dark" alt="Web" />
-
-</div>
-
-<br/>
-
-| Domain | Tools & Technologies |
-| :--- | :--- |
-| **Languages** | Python · C · C++ · x86 Assembly · SQL · JavaScript / TypeScript · Bash |
-| **AWS Data** | S3 · Glue · Athena · Redshift · Kinesis · Lambda · Step Functions |
-| **AWS Infrastructure** | VPC · IAM · KMS · CloudWatch · CloudTrail · EC2 |
-| **Security** | Kali Linux · Nmap · Wireshark · Metasploit · OWASP Top 10 |
-| **Networking** | Wireshark · tcpdump · Routing & Switching · VPN · Firewalls |
-| **Web** | Vue · Angular · Node.js · Full-stack development |
-
----
+- 🔐 Background in **offensive security and networking**, now focused on **security data engineering** and **cloud security**
+- 🇺🇸 Incoming **U.S. Air Force** data engineer (starting December 2026)
+- 🛠️ I build systems the way production teams do: infrastructure as code, CI on every change, written decision records, and published numbers
+- 🎯 Interested in AI security, abuse detection, and privacy infrastructure at scale
 
 ## Certifications
 
-| Certification | Status |
-| :--- | :---: |
-| AWS Certified Cloud Practitioner | ![In Progress](https://img.shields.io/badge/In%20Progress-38BDF8?style=flat-square) |
-| AWS Certified Data Engineer – Associate | ![In Progress](https://img.shields.io/badge/In%20Progress-38BDF8?style=flat-square) |
+| Certification | Issuer | Status |
+| --- | --- | --- |
+| **CRTO**: Certified Red Team Operator | Zero-Point Security | ![Passed](https://img.shields.io/badge/-Passed-2EA043?style=flat-square) |
+| **CCNA**: Cisco Certified Network Associate | Cisco | ![Passed](https://img.shields.io/badge/-Passed-2EA043?style=flat-square) |
+| **AWS Certified Data Engineer – Associate** | Amazon Web Services | ![In progress](https://img.shields.io/badge/-In%20progress-D29922?style=flat-square) |
+| **CompTIA Security+** | CompTIA | ![In progress](https://img.shields.io/badge/-In%20progress-D29922?style=flat-square) |
+
+## Projects
+
+Four connected projects on one shared AWS foundation. Each one tackles an open problem in AI and data security, using synthetic data and infrastructure I own.
+
+| # | Project | What it does | Status |
+| --- | --- | --- | --- |
+| 1 | **[Weight Vault](https://github.com/YOUR-USERNAME/weight-vault)** | Protects a crown-jewel asset: two-person access, egress budgets that trip before a bulk copy finishes, and decoys that alert when touched | ![Building](https://img.shields.io/badge/-Building-1F6FEB?style=flat-square) |
+| 2 | **Anti-Distillation** | Detects coordinated abuse of an AI API (distillation farms, fake-account networks, scripted jailbreaks) by behavior, not just content | ![Planned](https://img.shields.io/badge/-Planned-6E7781?style=flat-square) |
+| 3 | **Agent Control Plane** | Runs AI agents in locked-down sandboxes with a policy engine, full tracing, and a prompt-injection monitor, plus evals with real error bars | ![Planned](https://img.shields.io/badge/-Planned-6E7781?style=flat-square) |
+| 4 | **Consent Enforcement** | Proves that opted-out or deleted data never reaches a training set: consent labels, lineage checks in CI, and verified deletion | ![Planned](https://img.shields.io/badge/-Planned-6E7781?style=flat-square) |
+
+<details>
+<summary><b>🔍 More on each project</b></summary>
+
+### 1. Weight Vault
+A monitored vault for one high-value asset. It starts with a detection pipeline (Zeek → S3 → Athena) with detections-as-code: SQL rules with YAML metadata and positive/negative test fixtures, all run in CI. It grows into a multi-account AWS vault with KMS-protected decoys, CloudTrail data events, approval-based temporary access, and per-identity egress budgets. Every exfiltration drill runs against my own decoys, and time-to-detect is published.
+
+**Stack:** Zeek · Python · SQL · AWS (S3, Athena, Glue, KMS, CloudTrail, IAM Identity Center) · Terraform · GitHub Actions (OIDC) · pytest
+
+### 2. Anti-Distillation
+A small LLM API platform with thousands of synthetic accounts and a layered defense: a real-time classifier at the gateway, batch account-level detections, graph clustering on shared fingerprints, and a review queue with appeals. Precision, recall, and time-to-detect are published for each campaign type.
+
+**Stack:** Python · FastAPI · Postgres · scikit-learn · NetworkX · MinHash · Kafka/Flink · open safety models
+
+### 3. Agent Control Plane
+Sandboxed infrastructure for AI agents with tool access: gVisor sandboxes with no network by default, a deny-by-default egress proxy, OPA policies on every tool call, full traces, and an automated sandbox-escape test suite that gates every release. Eval results are reported with confidence intervals.
+
+**Stack:** Docker · gVisor · OPA · Inspect · Python · S3 · Kubernetes (when needed)
+
+### 4. Consent Enforcement
+Purpose limitation for a data lakehouse. Tables carry consent labels, CI parses every dbt model with sqlglot and blocks forbidden data flows, and a deletion job removes a user from every derived table and Iceberg snapshot, then issues a verifiable receipt.
+
+**Stack:** dbt · sqlglot · Apache Iceberg · DuckDB · Trino · Presidio · GitHub Actions
+
+### Shared foundation
+A multi-account AWS organization in Terraform with SCP guardrails, an organization-wide CloudTrail trail, and keyless CI. Each control is proven by running attack techniques against a sandbox account and recording what was prevented, detected, or auto-remediated.
+
+</details>
+
+## Tech stack
+
+**Languages**
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+![Assembly](https://img.shields.io/badge/Assembly-6E4C13?style=flat-square)
+
+**Cloud & infrastructure**
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+
+**Data**
+![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
+![Apache Iceberg](https://img.shields.io/badge/Apache%20Iceberg-4E8EE9?style=flat-square)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
+![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
+
+**Security**
+![Zeek](https://img.shields.io/badge/Zeek-2B5C8A?style=flat-square)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
+![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-C8102E?style=flat-square)
+![Cisco](https://img.shields.io/badge/Cisco-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
+
+## How I build
+
+- **Measure it or it didn't happen.** Every project publishes real numbers: detection time, precision and recall, cost per month.
+- **Test the controls, not just the code.** Detections ship with fixtures, and sandboxes ship with escape tests.
+- **Write down the why.** Each real decision gets a short decision record that covers the simpler option I rejected.
+- **Ethical by design.** Synthetic or public data only, and only infrastructure I own.
 
 ---
 
-## Featured Projects
-
-<!-- Replace the two template cards with your real projects. Lead with the one you're proudest of. -->
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### [peytonpulliam.com](https://peytonpulliam.com)
-My personal site and portfolio, designed and built from scratch.
-
-`Web` `Full Stack`
-
-</td>
-<td width="50%" valign="top">
-
-### [Project Name](https://github.com/YOUR_GITHUB_USERNAME/REPO)
-One sentence on the problem it solves and the result, e.g. *"Serverless pipeline ingesting 1M+ events/day into a queryable S3 data lake."*
-
-`Python` `AWS Glue` `Athena`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [Project Name](https://github.com/YOUR_GITHUB_USERNAME/REPO)
-One sentence on what it does and why it matters, e.g. *"Network traffic analyzer that flags anomalous flows from raw packet captures."*
-
-`C` `libpcap` `Networking`
-
-</td>
-<td width="50%" valign="top">
-
-### [Project Name](https://github.com/YOUR_GITHUB_USERNAME/REPO)
-One sentence on what it does and why it matters.
-
-`Tag` `Tag` `Tag`
-
-</td>
-</tr>
-</table>
-
----
-
-## GitHub Activity
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&hide_border=true&bg_color=0D1117&title_color=38BDF8&icon_color=38BDF8&text_color=C9D1D9&rank_icon=github" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&hide_border=true&bg_color=0D1117&title_color=38BDF8&text_color=C9D1D9" alt="Top languages" />
-
-</div>
-
----
-
-<div align="center">
-
-**Secure by design. Scalable by default.**
-
-<sub>Open to data engineering, cloud, and security opportunities. <a href="https://peytonpulliam.com">peytonpulliam.com</a></sub>
-
-</div>
+<p align="center"><i>Currently building: Weight Vault v0.1, a replay-based detection pipeline with five tested detections.</i></p>
