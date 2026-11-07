@@ -6,7 +6,16 @@
 
 <p align="center">
   <a href="https://peytonpulliam.com"><img src="https://img.shields.io/badge/Website-peytonpulliam.com-0A66C2?style=flat-square&logo=googlechrome&logoColor=white" alt="Website"></a>
-  <a href="https://www.linkedin.com/in/peyton-pulliam-132690352/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white" target="_blank" alt="LinkedIn"></a>
+  <a
+  href="https://www.linkedin.com/in/peyton-pulliam-132690352/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white"
+    alt="Connect on LinkedIn"
+  >
+</a>
 </p>
 
 ---
