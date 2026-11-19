@@ -1,0 +1,17 @@
+---
+interface Props {
+  number: number;
+  title: string;
+  id?: string;
+  note?: string;
+}
+
+const { number, title, id = `section-${number}`, note } = Astro.props;
+---
+<section class:list={['doc-section', { 'has-aside': note }]} id={id} aria-labelledby={`${id}-title`}>
+  <div class="section-body">
+    <h2 id={`${id}-title`}><span class="section-number" aria-hidden="true">{number}</span>{title}</h2>
+    <slot />
+  </div>
+  {note && <aside class="margin-note" aria-label="Margin note"><p>{note}</p></aside>}
+</section>

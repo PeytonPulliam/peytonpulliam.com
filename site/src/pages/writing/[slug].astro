@@ -1,0 +1,25 @@
+---
+import type { GetStaticPaths } from 'astro';
+import DocumentLayout from '../../layouts/DocumentLayout.astro';
+import DocumentHeader from '../../components/DocumentHeader.astro';
+import DocumentSection from '../../components/DocumentSection.astro';
+import { notes, projects, projectPath } from '../../data/portfolio';
+
+export const getStaticPaths = (() => notes.map((note) => {
+  const project = projects.find(({ slug }) => slug === note.project);
+  if (!project) throw new Error(`Unknown project in field note ${note.slug}`);
+  return { params: { slug: note.slug }, props: { note, project } };
+})) satisfies GetStaticPaths;
+
+const { note, project } = Astro.props;
+---
+<DocumentLayout title={note.title} description={note.intro}>
+  <DocumentHeader label={`${note.id} · Field note`} title={note.title} intro={note.intro} />
+  {note.sections.map(([title, body], index) => (
+    <DocumentSection number={index + 1} title={title}><p class="prose">{body}</p></DocumentSection>
+  ))}
+  <nav class="doc-pagination" aria-label="Writing navigation">
+    <a href="/#writing">All writing</a>
+    <span>Related · <a href={projectPath(project)}>{project.title}</a></span>
+  </nav>
+</DocumentLayout>

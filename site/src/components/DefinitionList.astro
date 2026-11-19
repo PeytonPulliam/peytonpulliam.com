@@ -1,0 +1,10 @@
+---
+interface Props {
+  rows: string[][];
+}
+
+const { rows } = Astro.props;
+---
+<dl class="pairs">
+  {rows.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+</dl>

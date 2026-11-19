@@ -1,0 +1,13 @@
+---
+interface Props {
+  filename: string;
+  code: string;
+}
+
+const { filename, code } = Astro.props;
+const parts = code.split(/("(?:[^"\\]|\\.)*"|\b(?:def|if|not|return|and|or|is|None|True|False)\b)/g);
+---
+<div class="snippet" role="group" aria-label="Illustrative Python code">
+  <div class="snippet-title">{filename}<span>Illustrative</span></div>
+  <pre tabindex="0" aria-label="Python code example"><code>{parts.map((part, index) => index % 2 ? <span class="syntax">{part}</span> : part)}</code></pre>
+</div>

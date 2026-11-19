@@ -1,0 +1,24 @@
+---
+interface Props {
+  rows: string[][];
+}
+
+const { rows } = Astro.props;
+const columns = ['Threat', 'Actor', 'Proposed mitigation', 'Residual risk'];
+---
+<table class="doc-table threat-table" role="table">
+  <caption class="visually-hidden">Threat model</caption>
+  <thead role="rowgroup">
+    <tr role="row">{columns.map((column) => <th scope="col" role="columnheader">{column}</th>)}</tr>
+  </thead>
+  <tbody role="rowgroup">
+    {rows.map(([threat, ...details]) => (
+      <tr role="row">
+        <th scope="row" role="rowheader">{threat}</th>
+        {details.map((detail, index) => (
+          <td role="cell"><span class="cell-label" aria-hidden="true">{columns[index + 1]}</span><span>{detail}</span></td>
+        ))}
+      </tr>
+    ))}
+  </tbody>
+</table>

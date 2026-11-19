@@ -1,0 +1,20 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  intro: string;
+  metadata?: string[][];
+}
+
+const { label, title, intro, metadata = [] } = Astro.props;
+---
+<header class="doc-header">
+  <p class="eyebrow">{label}</p>
+  <h1>{title}</h1>
+  <p class="dek">{intro}</p>
+  {metadata.length > 0 && (
+    <dl class="metadata" aria-label="Document metadata">
+      {metadata.map(([term, value]) => <div><dt>{term}</dt><dd>{value}</dd></div>)}
+    </dl>
+  )}
+</header>
