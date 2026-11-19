@@ -1,0 +1,21 @@
+---
+import { projects, projectPath } from '../data/portfolio';
+
+const columns = ['ID', 'Project', 'Summary', 'Status'];
+---
+<table class="doc-table project-table" role="table">
+  <caption class="visually-hidden">Project design documents</caption>
+  <thead role="rowgroup">
+    <tr role="row">{columns.map((column) => <th scope="col" role="columnheader">{column}</th>)}</tr>
+  </thead>
+  <tbody role="rowgroup">
+    {projects.map((project) => (
+      <tr role="row">
+        <td role="cell">{project.id}</td>
+        <td role="cell"><a href={projectPath(project)}>{project.title}</a></td>
+        <td role="cell">{project.summary}</td>
+        <td role="cell">{project.status}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

@@ -1,0 +1,83 @@
+---
+import type { GetStaticPaths } from 'astro';
+import DocumentLayout from '../../layouts/DocumentLayout.astro';
+import DocumentHeader from '../../components/DocumentHeader.astro';
+import DocumentSection from '../../components/DocumentSection.astro';
+import DefinitionList from '../../components/DefinitionList.astro';
+import ThreatTable from '../../components/ThreatTable.astro';
+import CodeExample from '../../components/CodeExample.astro';
+import { projects, projectPath } from '../../data/portfolio';
+
+export const getStaticPaths = (() => projects.map((project, index) => ({
+  params: { slug: project.slug },
+  props: { project, next: projects[index + 1] },
+}))) satisfies GetStaticPaths;
+
+const { project, next } = Astro.props;
+---
+<DocumentLayout title={project.title} description={project.intro}>
+  <DocumentHeader
+    label={`${project.id} · Design doc`}
+    title={project.title}
+    intro={project.intro}
+    metadata={[
+      ['Status', project.status], ['Role', 'Personal project'], ['Timeline', 'Design phase'],
+      ['Proposed stack', project.stack], ['Source', 'Not published'],
+    ]}
+  />
+  <DocumentSection number={1} title="Problem" note={project.note}>
+    <p class="prose">{project.problem}</p>
+  </DocumentSection>
+  <DocumentSection number={2} title="Goals and non-goals">
+    <div class="split prose">
+      <div>
+        <h3 class="small-label">Goals</h3>
+        <ul>{project.goals.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <div>
+        <h3 class="small-label">Non-goals</h3>
+        <ul>{project.nonGoals.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </DocumentSection>
+  <DocumentSection number={3} title="Threat model">
+    <p class="prose">{project.threatIntro}</p>
+    <ThreatTable rows={project.threats} />
+  </DocumentSection>
+  <DocumentSection number={4} title="Architecture">
+    <figure class="architecture">
+      <div class="sketch">
+        <span class="small-label">Proposed request flow</span>
+        <ol class="pipeline">
+          {project.flow.map(([name, detail]) => <li><strong>{name}</strong><span>{detail}</span></li>)}
+        </ol>
+      </div>
+      <figcaption>{project.caption}</figcaption>
+    </figure>
+  </DocumentSection>
+  <DocumentSection number={5} title="Alternatives considered" note={project.alternativeNote}>
+    <div class="prose alternatives">
+      {project.alternatives.map(([title, detail]) => <div><h3>{title}</h3><p>{detail}</p></div>)}
+    </div>
+  </DocumentSection>
+  <DocumentSection number={6} title="Implementation">
+    <p class="prose">{project.snippetIntro}</p>
+    <CodeExample filename={project.filename} code={project.code} />
+  </DocumentSection>
+  <DocumentSection number={7} title="Postmortem">
+    <p class="prose">No prototype failure has been recorded yet. This is the first failure scenario to test.</p>
+    <DefinitionList rows={[[ 'Failure to test', project.failure ], [ 'Next test', project.nextTest ]]} />
+  </DocumentSection>
+  <DocumentSection number={8} title="Results">
+    <p class="prose">No measurements yet. These are the proposed metrics.</p>
+    <ul class="listing prose">
+      {project.metrics.map((metric) => <li><span class="metric">{metric}</span><span>Not yet measured</span></li>)}
+    </ul>
+  </DocumentSection>
+  <nav class="doc-pagination" aria-label="Project navigation">
+    <a href="/#projects">All projects</a>
+    {next
+      ? <span>Next · <a href={projectPath(next)}>{next.id} {next.title}</a></span>
+      : <a href="/#writing">Browse writing</a>}
+  </nav>
+</DocumentLayout>

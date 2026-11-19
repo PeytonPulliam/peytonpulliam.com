@@ -1,0 +1,22 @@
+---
+import DocumentLayout from '../layouts/DocumentLayout.astro';
+import DocumentHeader from '../components/DocumentHeader.astro';
+import DocumentSection from '../components/DocumentSection.astro';
+import DefinitionList from '../components/DefinitionList.astro';
+import { profile, projects, projectPath } from '../data/portfolio';
+---
+<DocumentLayout title="Résumé" description="Professional background and selected designs by Peyton Pulliam.">
+  <DocumentHeader label="Résumé · Professional profile" title={profile.name} intro="Software engineering and AI systems security" />
+  <DocumentSection number={1} title="Background"><DefinitionList rows={profile.background} /></DocumentSection>
+  <DocumentSection number={2} title="Selected designs">
+    <p class="prose">Independent AI security design drafts.</p>
+    <ul class="listing prose resume-projects">
+      {projects.map((project) => (
+        <li><div><a href={projectPath(project)}>{project.title}</a><p>{project.summary}</p></div><span>{project.id}</span></li>
+      ))}
+    </ul>
+  </DocumentSection>
+  <DocumentSection number={3} title="Find me">
+    <p class="profile-links"><a href={profile.github}>GitHub</a><a href={profile.linkedin}>LinkedIn</a></p>
+  </DocumentSection>
+</DocumentLayout>
