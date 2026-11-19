@@ -3,15 +3,15 @@ export const profile = {
   domain: 'peytonpulliam.com',
   github: 'https://github.com/PeytonPulliam',
   linkedin: 'https://www.linkedin.com/in/peyton-pulliam-132690352/',
-  tagline: 'Software engineer building security for AI systems. I attack my own designs before anyone else gets the chance.',
+  tagline: 'Software engineer that is currently in the making',
   updated: '2026-11-18',
-  abstract: 'I design controls around the parts of AI systems that carry real authority: model artifacts, inference endpoints, tools, and data. This portfolio is my design log. Each project names what it protects, where the trust boundary is, and what still needs to be tested.',
-  motivation: 'A model can answer exactly as intended and still be part of an insecure system. If the service around it can fetch private data or invoke a tool on someone’s behalf, the model’s answer isn’t the only thing that matters. I’m interested in putting the right checks where those actions actually happen.',
-  limitations: 'These are design drafts, not production systems. The next step is to build small prototypes, test the failure paths, and publish the results alongside the diagrams.',
+  abstract: 'TBD...',
+  motivation: 'TBD...',
+  limitations: 'TBD...',
   background: [
     ['Focus', 'Software engineering and AI systems security'],
-    ['Track', 'U.S. Air Force software development'],
-    ['Languages', 'Python, C, C++, Assembly, JavaScript'],
+    ['Track', 'U.S. Air Force Software Development'],
+    ['Languages', 'Rust, C, Bash, Python, TypeScript'],
   ],
 };
 
