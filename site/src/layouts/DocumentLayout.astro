@@ -12,7 +12,7 @@ interface Props {
 
 const { title, description, noindex = false } = Astro.props;
 const fullTitle = title === profile.name
-  ? `${title} · AI Systems Security`
+  ? `${title} · Software Development`
   : `${title} · ${profile.name}`;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 const hasResume = existsSync(resolve('public/resume.pdf'));
