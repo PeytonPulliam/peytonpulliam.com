@@ -47,7 +47,10 @@ const resume = hasResume ? { href: '/resume.pdf', label: 'resume.pdf' } : { href
     </header>
     <main id="main" class="frame" tabindex="-1"><slot /></main>
     <footer class="site-footer frame">
-      <span>Comments on this doc? <a href={profile.linkedin}>Get in touch</a></span>
+      <div class="footer-note">
+        <span>Comments on this doc? <a href={profile.linkedin}>Get in touch</a></span>
+        <small class="development-credit">Aided in Development: Isaiah Urbano</small>
+      </div>
       <nav aria-label="Footer">
         <a href={profile.github}>github</a>
         <a href={profile.linkedin}>linkedin</a>
