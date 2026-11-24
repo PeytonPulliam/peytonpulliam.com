@@ -275,6 +275,14 @@ figcaption { color: var(--muted); font-size: .875rem; margin-top: .65rem; }
   font-size: .9375rem;
 }
 .profile-links { display: flex; gap: 1rem; }
+.footer-note {
+  display: grid;
+  gap: .15rem;
+}
+.development-credit {
+  color: var(--muted);
+  font: .75rem/1.4 var(--mono);
+}
 .site-footer {
   display: flex;
   justify-content: space-between;
