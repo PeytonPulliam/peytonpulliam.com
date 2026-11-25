@@ -15,13 +15,14 @@ async function htmlFiles(folder) {
   }))).flat();
 }
 
-test('home follows the Jake\'s Resume sections and links to four projects and three notes', () => {
+test('home leads with projects and links to four projects and three notes', () => {
   const headings = [...home.matchAll(/<h2[^>]*><span[^>]*>\d+<\/span>([^<]+)/g)]
     .map(([, heading]) => heading.trim());
-  assert.deepEqual(headings, ['Education', 'Experience', 'Projects', 'Technical Skills', 'Certifications', 'Writing']);
+  assert.deepEqual(headings, ['Projects', 'How I build', 'Experience', 'Writing', 'Background']);
   assert.equal([...home.matchAll(/href="\/projects\/[a-z-]+\/"/g)].length, 4);
   assert.equal([...home.matchAll(/href="\/writing\/[a-z-]+\/"/g)].length, 3);
-  assert.equal([...home.matchAll(/<article class="entry"/g)].length, 7);
+  assert.equal([...home.matchAll(/<article class="project-card"/g)].length, 4);
+  assert.match(home, /href="\/resume\/"/);
 });
 
 test('printable resume has the same sections without writing', async () => {

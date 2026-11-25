@@ -3,14 +3,13 @@ import DocumentHeader from './DocumentHeader.astro';
 import DocumentSection from './DocumentSection.astro';
 import DefinitionList from './DefinitionList.astro';
 import ResumeEntry from './ResumeEntry.astro';
-import { profile, resume, projects, projectPath, notes, notePath } from '../data/portfolio';
+import { profile, resume, projects, projectPath } from '../data/portfolio';
 
 interface Props {
   label: string;
-  showWriting?: boolean;
 }
 
-const { label, showWriting = false } = Astro.props;
+const { label } = Astro.props;
 ---
 <DocumentHeader label={label} title={profile.name} intro={profile.tagline}>
   <p class="contact-line">
@@ -51,10 +50,3 @@ const { label, showWriting = false } = Astro.props;
   </ul>
 </DocumentSection>
 
-{showWriting && (
-  <DocumentSection number={6} title="Writing" id="writing">
-    <ul class="listing prose">
-      {notes.map((note) => <li><a href={notePath(note)}>{note.title}</a><span>Field note</span></li>)}
-    </ul>
-  </DocumentSection>
-)}
