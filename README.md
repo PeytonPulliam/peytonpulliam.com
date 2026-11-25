@@ -1,7 +1,7 @@
 <h1 align="center">Peyton Pulliam</h1>
 
 <p align="center">
-  <b>Data Engineer @ U.S. Air Force</b>
+  <b>Software Engineer · U.S. Air Force Software Development Operations (1D7X4P)</b>
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 
 ## About me
 
--  Currently learning cloud security, networking, and software development.
+- Software engineer focused on security infrastructure: real-time detection, privacy enforcement, and systems I prove by attacking them.
 
 ## Certifications
 
@@ -30,45 +30,20 @@
 | --- | --- | --- |
 | **CRTO**: Certified Red Team Operator | Zero-Point Security | ![Passed](https://img.shields.io/badge/-Passed-2EA043?style=flat-square) |
 | **CCNA**: Cisco Certified Network Associate | Cisco | ![Passed](https://img.shields.io/badge/-Passed-2EA043?style=flat-square) |
-| **AWS Certified Data Engineer – Associate** | Amazon Web Services | ![In progress](https://img.shields.io/badge/-In%20progress-D29922?style=flat-square) |
-| **CompTIA Security+** | CompTIA | ![In progress](https://img.shields.io/badge/-In%20progress-D29922?style=flat-square) |
+| **CompTIA Security+** | CompTIA | ![Planned](https://img.shields.io/badge/-Planned-6E7781?style=flat-square) |
 
 ## Projects
 
+Full design docs for each project are on [peytonpulliam.com](https://peytonpulliam.com).
+
 | # | Project | What it does | Status |
 | --- | --- | --- | --- |
-| 1 | **[Weight Vault](https://github.com/YOUR-USERNAME/weight-vault)** | Protects a crown-jewel asset: two-person access, egress budgets that trip before a bulk copy finishes, and decoys that alert when touched | ![Building](https://img.shields.io/badge/-Building-1F6FEB?style=flat-square) |
-| 2 | **Anti-Distillation** | Detects coordinated abuse of an AI API (distillation farms, fake-account networks, scripted jailbreaks) by behavior, not just content | ![Planned](https://img.shields.io/badge/-Planned-6E7781?style=flat-square) |
-| 3 | **Agent Control Plane** | Runs AI agents in locked-down sandboxes with a policy engine, full tracing, and a prompt-injection monitor, plus evals with real error bars | ![Planned](https://img.shields.io/badge/-Planned-6E7781?style=flat-square) |
-| 4 | **Consent Enforcement** | Proves that opted-out or deleted data never reaches a training set: consent labels, lineage checks in CI, and verified deletion | ![Planned](https://img.shields.io/badge/-Planned-6E7781?style=flat-square) |
+| 1 | **Session Risk Engine** | Scores every login inline to catch account takeovers, with a p99 latency target under 20 ms | ![Building](https://img.shields.io/badge/-Building-1F6FEB?style=flat-square) |
+| 2 | **Privacy Flow Guard** | Fails CI when code sends tagged personal data somewhere unapproved; a runtime proxy enforces consent | ![Design](https://img.shields.io/badge/-Design%20draft-6E7781?style=flat-square) |
+| 3 | **Leak Tracer** | Invisible per-viewer video watermarks that trace a leaked copy back to its account | ![Design](https://img.shields.io/badge/-Design%20draft-6E7781?style=flat-square) |
+| 4 | **Security Chaos Lab** | Attacks projects 1–3 on Kubernetes and scores each detection like a test, with an eBPF sensor | ![Design](https://img.shields.io/badge/-Design%20draft-6E7781?style=flat-square) |
 
-<details>
-<summary><b>🔍 More on each project</b></summary>
-
-### 1. Weight Vault
-A monitored vault for one high-value asset. It starts with a detection pipeline (Zeek → S3 → Athena) with detections-as-code: SQL rules with YAML metadata and positive/negative test fixtures, all run in CI. It grows into a multi-account AWS vault with KMS-protected decoys, CloudTrail data events, approval-based temporary access, and per-identity egress budgets. Every exfiltration drill runs against my own decoys, and time-to-detect is published.
-
-**Stack:** Zeek · Python · SQL · AWS (S3, Athena, Glue, KMS, CloudTrail, IAM Identity Center) · Terraform · GitHub Actions (OIDC) · pytest
-
-### 2. Anti-Distillation
-A small LLM API platform with thousands of synthetic accounts and a layered defense: a real-time classifier at the gateway, batch account-level detections, graph clustering on shared fingerprints, and a review queue with appeals. Precision, recall, and time-to-detect are published for each campaign type.
-
-**Stack:** Python · FastAPI · Postgres · scikit-learn · NetworkX · MinHash · Kafka/Flink · open safety models
-
-### 3. Agent Control Plane
-Sandboxed infrastructure for AI agents with tool access: gVisor sandboxes with no network by default, a deny-by-default egress proxy, OPA policies on every tool call, full traces, and an automated sandbox-escape test suite that gates every release. Eval results are reported with confidence intervals.
-
-**Stack:** Docker · gVisor · OPA · Inspect · Python · S3 · Kubernetes (when needed)
-
-### 4. Consent Enforcement
-Purpose limitation for a data lakehouse. Tables carry consent labels, CI parses every dbt model with sqlglot and blocks forbidden data flows, and a deletion job removes a user from every derived table and Iceberg snapshot, then issues a verifiable receipt.
-
-**Stack:** dbt · sqlglot · Apache Iceberg · DuckDB · Trino · Presidio · GitHub Actions
-
-### Shared foundation
-A multi-account AWS organization in Terraform with SCP guardrails, an organization-wide CloudTrail trail, and keyless CI. Each control is proven by running attack techniques against a sandbox account and recording what was prevented, detected, or auto-remediated.
-
-</details>
+**Stacks:** Go · gRPC · Redis · Postgres · Redpanda · k6 · Python · Semgrep · FFmpeg · OpenCV · Kubernetes · Terraform · eBPF · Prometheus · Grafana
 
 ## Tech stack
 
@@ -88,25 +63,25 @@ A multi-account AWS organization in Terraform with SCP guardrails, an organizati
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 
-**Data**
-![DuckDB](https://img.shields.io/badge/DuckDB-FFF000?style=flat-square&logo=duckdb&logoColor=black)
-![Apache Iceberg](https://img.shields.io/badge/Apache%20Iceberg-4E8EE9?style=flat-square)
-![dbt](https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white)
-![Kafka](https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)
+**Building with**
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-FF4438?style=flat-square&logo=redis&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![eBPF](https://img.shields.io/badge/eBPF-000000?style=flat-square)
 
 **Security**
-![Zeek](https://img.shields.io/badge/Zeek-2B5C8A?style=flat-square)
 ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat-square&logo=wireshark&logoColor=white)
 ![MITRE ATT&CK](https://img.shields.io/badge/MITRE%20ATT%26CK-C8102E?style=flat-square)
 ![Cisco](https://img.shields.io/badge/Cisco-1BA0D7?style=flat-square&logo=cisco&logoColor=white)
 
 ## How I build
 
-- **Measure it or it didn't happen.** Every project publishes real numbers: detection time, precision and recall, cost per month.
-- **Test the controls, not just the code.** Detections ship with fixtures, and sandboxes ship with escape tests.
+- **Measure it or it didn't happen.** Every project publishes real numbers: latency, detection rate, time to detect.
+- **Test the controls, not just the code.** Detections ship with test fixtures, and the capstone attacks everything else on purpose.
 - **Write down the why.** Each real decision gets a short decision record that covers the simpler option I rejected.
 - **Ethical by design.** Synthetic or public data only, and only infrastructure I own.
 
 ---
 
-<p align="center"><i>Currently building: Weight Vault v0.1, a replay-based detection pipeline with five tested detections.</i></p>
+<p align="center"><i>Currently building: Session Risk Engine.</i></p>

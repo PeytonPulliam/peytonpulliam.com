@@ -21,8 +21,8 @@ const { project, next } = Astro.props;
     title={project.title}
     intro={project.intro}
     metadata={[
-      ['Status', project.status], ['Role', 'Personal project'], ['Timeline', 'Design phase'],
-      ['Proposed stack', project.stack], ['Source', 'Not published'],
+      ['Status', project.status], ['Role', 'Personal project'], ['Timeline', project.timeline],
+      ['Stack', project.stack], ['Source', project.source],
     ]}
   />
   <DocumentSection number={1} title="Problem" note={project.note}>
@@ -62,7 +62,7 @@ const { project, next } = Astro.props;
   </DocumentSection>
   <DocumentSection number={6} title="Implementation">
     <p class="prose">{project.snippetIntro}</p>
-    <CodeExample filename={project.filename} code={project.code} />
+    <CodeExample filename={project.filename} code={project.code} language={project.language} />
   </DocumentSection>
   <DocumentSection number={7} title="Postmortem">
     <p class="prose">No prototype failure has been recorded yet. This is the first failure scenario to test.</p>

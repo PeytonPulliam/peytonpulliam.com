@@ -17,4 +17,5 @@ const { label, title, intro, metadata = [] } = Astro.props;
       {metadata.map(([term, value]) => <div><dt>{term}</dt><dd>{value}</dd></div>)}
     </dl>
   )}
+  <slot />
 </header>

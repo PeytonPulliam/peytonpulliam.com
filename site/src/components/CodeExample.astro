@@ -2,12 +2,19 @@
 interface Props {
   filename: string;
   code: string;
+  language?: 'python' | 'go';
 }
 
-const { filename, code } = Astro.props;
-const parts = code.split(/("(?:[^"\\]|\\.)*"|\b(?:def|if|not|return|and|or|is|None|True|False)\b)/g);
+const { filename, code, language = 'python' } = Astro.props;
+const keywords = {
+  python: 'def|if|else|for|in|not|return|and|or|is|None|True|False',
+  go: 'func|if|for|range|return|switch|case|defer|nil|true|false|var|type|struct',
+};
+const names = { python: 'Python', go: 'Go' };
+const pattern = new RegExp(`("(?:[^"\\\\]|\\\\.)*"|\\b(?:${keywords[language]})\\b)`, 'g');
+const parts = code.split(pattern);
 ---
-<div class="snippet" role="group" aria-label="Illustrative Python code">
+<div class="snippet" role="group" aria-label={`Illustrative ${names[language]} code`}>
   <div class="snippet-title">{filename}<span>Illustrative</span></div>
-  <pre tabindex="0" aria-label="Python code example"><code>{parts.map((part, index) => index % 2 ? <span class="syntax">{part}</span> : part)}</code></pre>
+  <pre tabindex="0" aria-label={`${names[language]} code example`}><code>{parts.map((part, index) => index % 2 ? <span class="syntax">{part}</span> : part)}</code></pre>
 </div>

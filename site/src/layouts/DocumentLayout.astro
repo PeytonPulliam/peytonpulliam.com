@@ -39,16 +39,17 @@ const resume = hasResume ? { href: '/resume.pdf', label: 'resume.pdf' } : { href
     <header class="site-header frame">
       <a class="wordmark" href="/">{profile.domain}</a>
       <nav aria-label="Primary">
+        <a href="/#experience">experience</a>
         <a href="/#projects">projects</a>
+        <a href="/#skills">skills</a>
         <a href="/#writing">writing</a>
-        <a href="/#background">background</a>
         <a href={resume.href}>{resume.label}</a>
       </nav>
     </header>
     <main id="main" class="frame" tabindex="-1"><slot /></main>
     <footer class="site-footer frame">
       <div class="footer-note">
-        <span>Comments on this doc? <a href={profile.linkedin}>Get in touch</a></span>
+        <span>Want to work together? <a href={profile.linkedin}>Get in touch</a></span>
         <small class="development-credit">Aided in Development: Isaiah Urbano</small>
       </div>
       <nav aria-label="Footer">
