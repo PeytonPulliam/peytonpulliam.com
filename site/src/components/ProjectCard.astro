@@ -1,0 +1,18 @@
+---
+import { projectPath, type Project } from '../data/portfolio';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const [metricLabel, metricValue] = project.metric;
+const titleId = `${project.slug}-card-title`;
+---
+<article class="project-card" aria-labelledby={titleId}>
+  <p class="card-meta"><span>{project.id}</span><span class:list={['card-status', { live: project.status === 'In progress' }]}>{project.status}</span></p>
+  <h3 id={titleId}><a href={projectPath(project)}>{project.title}</a></h3>
+  <p class="card-summary">{project.summary}</p>
+  <dl class="card-metric"><dt>{metricLabel}</dt><dd>{metricValue}</dd></dl>
+  <p class="card-stack">{project.stack}</p>
+</article>

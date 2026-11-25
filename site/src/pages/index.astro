@@ -1,8 +1,53 @@
 ---
 import DocumentLayout from '../layouts/DocumentLayout.astro';
-import ResumeBody from '../components/ResumeBody.astro';
-import { profile } from '../data/portfolio';
+import DocumentHeader from '../components/DocumentHeader.astro';
+import DocumentSection from '../components/DocumentSection.astro';
+import DefinitionList from '../components/DefinitionList.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ResumeEntry from '../components/ResumeEntry.astro';
+import { profile, resume, projects, notes, notePath } from '../data/portfolio';
+
+const degree = (name: string) => name.replace('Bachelor of Science in', 'B.S.').replace('Associate of Applied Science', 'A.A.S.');
+const education = resume.education.map((entry) => `${degree(entry.subtitle)}, ${entry.title} (${entry.when.toLowerCase()})`).join(' · ');
+const certifications = resume.certifications.map(([name, status]) => `${name.split(' · ')[0]} (${status.toLowerCase()})`).join(', ');
+const background = [
+  ['Education', education],
+  ...resume.skills,
+  ['Certifications', certifications],
+];
 ---
 <DocumentLayout title={profile.name} description={profile.tagline}>
-  <ResumeBody label={`Résumé · Last updated ${profile.updated}`} showWriting />
+  <DocumentHeader label={`Portfolio · Last updated ${profile.updated}`} title={profile.name} intro={profile.tagline}>
+    <p class="about prose">{profile.about}</p>
+    <p class="contact-line">
+      {resume.contact.map(([text, href]) => <a href={href}>{text}</a>)}
+      <a href="/resume/">résumé</a>
+    </p>
+  </DocumentHeader>
+
+  <DocumentSection number={1} title="Projects" id="projects">
+    <p class="prose">Four security systems, built in order. Each links to its design doc: threat model, architecture, alternatives considered, and how I will measure it. The last one attacks the first three.</p>
+    <div class="project-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </DocumentSection>
+
+  <DocumentSection number={2} title="How I build" id="principles">
+    <DefinitionList rows={profile.principles} />
+  </DocumentSection>
+
+  <DocumentSection number={3} title="Experience" id="experience">
+    {resume.experience.map((entry) => <ResumeEntry {...entry} />)}
+  </DocumentSection>
+
+  <DocumentSection number={4} title="Writing" id="writing">
+    <ul class="listing prose">
+      {notes.map((note) => <li><a href={notePath(note)}>{note.title}</a><span>Field note</span></li>)}
+    </ul>
+  </DocumentSection>
+
+  <DocumentSection number={5} title="Background" id="background">
+    <DefinitionList rows={background} />
+    <p class="resume-cta"><a href="/resume/">Full one-page résumé</a> <span>· printable, Jake's Resume format</span></p>
+  </DocumentSection>
 </DocumentLayout>

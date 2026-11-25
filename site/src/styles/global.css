@@ -296,6 +296,46 @@ figcaption { color: var(--muted); font-size: .875rem; margin-top: .65rem; }
 .entry-bullets { margin: .5rem 0 0; padding-left: 1.1rem; list-style: disc; }
 .entry-bullets li::marker { color: var(--accent-line); }
 .entry-bullets li + li { margin-top: .2rem; }
+.about { margin-top: 1.1rem; color: var(--muted); }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  padding: 1.15rem 1.25rem 1.2rem;
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--rule-strong);
+  background: var(--paper);
+  transition: background-color .15s, border-color .15s;
+}
+.project-card:hover, .project-card:focus-within { background: var(--wash); border-top-color: var(--accent); }
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font: .8125rem/1.4 var(--mono);
+}
+.card-status.live { color: var(--accent); }
+.card-status.live::before { content: '● '; }
+.project-card h3 { font-size: 1.25rem; font-weight: 720; letter-spacing: -.02em; line-height: 1.25; }
+.project-card h3 a { color: var(--ink); text-decoration: none; }
+.project-card h3 a::after { content: ''; position: absolute; inset: 0; }
+.project-card h3 a:hover { color: var(--accent); }
+.project-card h3 a:focus-visible { outline: none; }
+.project-card:has(h3 a:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.card-summary { color: var(--text); }
+.card-metric { border-left: 2px solid var(--accent-line); padding-left: .7rem; margin-top: auto; }
+.card-metric dt { color: var(--muted); font: .75rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .04em; }
+.card-metric dd { margin: .1rem 0 0; color: var(--ink); font-weight: 620; font-size: .9375rem; }
+.card-stack { color: var(--muted); font: .78rem/1.5 var(--mono); }
+.resume-cta { margin-top: 1.2rem; font-size: .9375rem; }
+.resume-cta span { color: var(--muted); }
 .doc-pagination {
   display: flex;
   justify-content: space-between;
@@ -380,6 +420,7 @@ main:has(.doc-pagination) + .site-footer {
   .cell-label { display: inline; color: var(--muted); font: .8125rem/1.5 var(--mono); }
   .pairs > div { grid-template-columns: minmax(5.25rem, 6.5rem) minmax(0, 1fr); }
   .split { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
   .contact-line { flex-direction: column; }
   .contact-line a + a::before { display: none; }
   .pipeline { grid-template-columns: 1fr; gap: 1.4rem; }
