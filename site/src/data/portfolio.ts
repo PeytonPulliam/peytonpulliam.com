@@ -5,6 +5,13 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/peyton-pulliam-132690352/',
   tagline: 'Software engineer building security infrastructure: real-time detection, privacy enforcement, and systems I prove by attacking them.',
   updated: '2026-11-25',
+  about: 'I join the U.S. Air Force as a software development operations specialist (1D7X4P) in December 2026. I hold the CRTO and CCNA, and I build security systems in public: every project here starts as a design doc with a threat model and is finished only when it has measured results.',
+  principles: [
+    ['Measure it', 'Every project publishes real numbers: latency, detection rate, time to detect.'],
+    ['Attack it', 'Detections ship with test cases, and the capstone attacks everything else on purpose.'],
+    ['Write down why', 'Each design records the simpler options I rejected and what would change my mind.'],
+    ['Stay in bounds', 'Synthetic data only, and only infrastructure I own.'],
+  ],
 };
 
 // Résumé content, laid out like Jake's Resume:
@@ -72,6 +79,8 @@ export const projects = [
     id: 'P-01', slug: 'session-risk-engine', title: 'Session Risk Engine', status: 'In progress',
     timeline: 'Building now', source: 'Not published yet', language: 'go',
     summary: 'Catches account takeovers in real time, inside the login path.',
+    // Swap 'Target'/'Will measure' for 'Result' once there is a measured number.
+    metric: ['Target', 'p99 under 20 ms per login decision'],
     intro: 'A Go service that scores every login and session event as it happens and returns allow, challenge, or block within a strict latency budget.',
     stack: 'Go, gRPC, Redis, Postgres, Redpanda, k6',
     resume: [
@@ -129,6 +138,8 @@ export const projects = [
     id: 'P-02', slug: 'privacy-flow-guard', title: 'Privacy Flow Guard', status: 'Design draft',
     timeline: 'Design phase', source: 'Not published', language: 'go',
     summary: 'Stops personal data from reaching places users never agreed to.',
+    // Swap 'Target'/'Will measure' for 'Result' once there is a measured number.
+    metric: ['Will measure', 'Forbidden data flows caught before merge'],
     intro: 'A proposed two-layer control: a code scanner that blocks forbidden data flows before merge, and a runtime proxy that enforces each user’s consent settings.',
     stack: 'Python, Semgrep, Go, Postgres',
     resume: [
@@ -174,6 +185,8 @@ export const projects = [
     id: 'P-03', slug: 'leak-tracer', title: 'Leak Tracer', status: 'Design draft',
     timeline: 'Design phase', source: 'Not published', language: 'python',
     summary: 'Traces a leaked video back to the account that leaked it.',
+    // Swap 'Target'/'Will measure' for 'Result' once there is a measured number.
+    metric: ['Will measure', 'ID recovery after re-encode, crop, and screen capture'],
     intro: 'A proposed forensic watermarking system that embeds an invisible, per-viewer mark in video and recovers it from a leaked copy.',
     stack: 'Python, FFmpeg, OpenCV, NumPy, Go',
     resume: [
@@ -215,6 +228,8 @@ export const projects = [
     id: 'P-04', slug: 'security-chaos-lab', title: 'Security Chaos Lab', status: 'Design draft',
     timeline: 'Capstone, after P-01 to P-03', source: 'Not published', language: 'go',
     summary: 'Attacks my own systems on purpose to prove the defenses work.',
+    // Swap 'Target'/'Will measure' for 'Result' once there is a measured number.
+    metric: ['Will measure', 'Time to detect for every injected attack'],
     intro: 'A proposed capstone that runs the other three projects on Kubernetes, injects attacks and failures, and measures whether each one is detected and contained.',
     stack: 'Go, Kubernetes, Terraform, eBPF, Prometheus, Grafana',
     resume: [
