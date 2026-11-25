@@ -4,14 +4,62 @@ export const profile = {
   github: 'https://github.com/PeytonPulliam',
   linkedin: 'https://www.linkedin.com/in/peyton-pulliam-132690352/',
   tagline: 'Software engineer that is currently in the making',
-  updated: '2026-11-18',
-  abstract: 'TBD...',
-  motivation: 'TBD...',
-  limitations: 'TBD...',
-  background: [
-    ['Focus', 'Software engineering and AI systems security'],
-    ['Track', 'U.S. Air Force Software Development'],
-    ['Languages', 'Rust, C, Bash, Python, TypeScript'],
+  updated: '2026-11-25',
+};
+
+// Résumé content, laid out like Jake's Resume:
+// heading → Education → Experience → Projects → Technical Skills (+ Certifications).
+// Edit anything here; the home page and /resume/ both render from it.
+export type ResumeEntry = {
+  title: string;
+  subtitle?: string;
+  when?: string;
+  where?: string;
+  bullets?: string[];
+};
+
+export const resume = {
+  contact: [
+    ['peytonpulliam.com', 'https://www.peytonpulliam.com'],
+    ['linkedin.com/in/peyton-pulliam', profile.linkedin],
+    ['github.com/PeytonPulliam', profile.github],
+  ],
+  education: [
+    {
+      title: 'University of Florida (UF Online)',
+      where: 'Online',
+      subtitle: 'Bachelor of Science in Computer Science',
+      when: 'Planned transfer',
+    },
+    {
+      title: 'Community College of the Air Force',
+      where: 'During service',
+      subtitle: 'Associate of Applied Science',
+      when: 'Planned',
+    },
+  ] satisfies ResumeEntry[],
+  experience: [
+    {
+      title: 'Software Engineering (1D7X4P)',
+      when: 'Starting Dec 2026',
+      subtitle: 'U.S. Air Force',
+      where: 'Active duty',
+      bullets: [
+        'Selected for the Air Force software engineering career field; Basic Military Training begins December 2026.',
+        'Technical training at Keesler AFB follows basic training.',
+      ],
+    },
+  ] satisfies ResumeEntry[],
+  skills: [
+    ['Languages', 'Python, C, C++, Rust, TypeScript/JavaScript, Bash, Assembly'],
+    ['Frameworks', 'Astro, Tailwind CSS, Vue, Angular'],
+    ['Developer tools', 'Git, Linux (WSL2 Ubuntu), Neovim, Vercel'],
+    ['Security', 'Red team operations (CRTO), networking (CCNA)'],
+  ],
+  certifications: [
+    ['Certified Red Team Operator (CRTO) · Zero-Point Security', 'Passed'],
+    ['Cisco Certified Network Associate (CCNA) · Cisco', 'Passed'],
+    ['CompTIA Security+', 'Planned'],
   ],
 };
 

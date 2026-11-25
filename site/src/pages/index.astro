@@ -1,40 +1,8 @@
 ---
 import DocumentLayout from '../layouts/DocumentLayout.astro';
-import DocumentHeader from '../components/DocumentHeader.astro';
-import DocumentSection from '../components/DocumentSection.astro';
-import DefinitionList from '../components/DefinitionList.astro';
-import ProjectIndex from '../components/ProjectIndex.astro';
-import { profile, notes, notePath } from '../data/portfolio';
+import ResumeBody from '../components/ResumeBody.astro';
+import { profile } from '../data/portfolio';
 ---
 <DocumentLayout title={profile.name} description={profile.tagline}>
-  <DocumentHeader
-    label="DOC-001 · Draft for review"
-    title={profile.name}
-    intro={profile.tagline}
-    metadata={[[ 'Author', profile.name ], [ 'Status', 'Open for review' ], [ 'Last updated', profile.updated ], [ 'Reviewers', 'You' ]]}
-  />
-  <DocumentSection
-    number={1} title="Abstract" id="abstract"
-    note={'Current focus\nAI security controls at the boundary between a model and the systems it can touch.'}
-  >
-    <p class="prose">{profile.abstract}</p>
-  </DocumentSection>
-  <DocumentSection number={2} title="Motivation" id="motivation">
-    <p class="prose">{profile.motivation}</p>
-  </DocumentSection>
-  <DocumentSection number={3} title="Implementations" id="projects">
-    <p class="prose">Each project has its own design doc, with a threat model, architecture, alternatives, and the tests I plan to run.</p>
-    <ProjectIndex />
-  </DocumentSection>
-  <DocumentSection number={4} title="Known limitations" id="limitations" note="Every good design doc has this section. So does this one.">
-    <p class="prose">{profile.limitations}</p>
-  </DocumentSection>
-  <DocumentSection number={5} title="Writing" id="writing">
-    <ul class="listing prose">
-      {notes.map((note) => <li><a href={notePath(note)}>{note.title}</a><span>Field note</span></li>)}
-    </ul>
-  </DocumentSection>
-  <DocumentSection number={6} title="Background" id="background">
-    <DefinitionList rows={profile.background} />
-  </DocumentSection>
+  <ResumeBody label={`Résumé · Last updated ${profile.updated}`} showWriting />
 </DocumentLayout>

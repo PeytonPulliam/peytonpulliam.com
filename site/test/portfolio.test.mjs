@@ -15,12 +15,19 @@ async function htmlFiles(folder) {
   }))).flat();
 }
 
-test('home contains the six document sections and links to four projects and three notes', () => {
+test('home follows the Jake\'s Resume sections and links to four projects and three notes', () => {
   const headings = [...home.matchAll(/<h2[^>]*><span[^>]*>\d+<\/span>([^<]+)/g)]
     .map(([, heading]) => heading.trim());
-  assert.deepEqual(headings, ['Abstract', 'Motivation', 'Implementations', 'Known limitations', 'Writing', 'Background']);
+  assert.deepEqual(headings, ['Education', 'Experience', 'Projects', 'Technical Skills', 'Certifications', 'Writing']);
   assert.equal([...home.matchAll(/href="\/projects\/[a-z-]+\/"/g)].length, 4);
   assert.equal([...home.matchAll(/href="\/writing\/[a-z-]+\/"/g)].length, 3);
+  assert.equal([...home.matchAll(/<article class="entry"/g)].length, 7);
+});
+
+test('printable resume has the same sections without writing', async () => {
+  const page = await readFile(join(output, 'resume', 'index.html'), 'utf8');
+  const headings = [...page.matchAll(/<h2[^>]*><span[^>]*>\d+<\/span>([^<]+)/g)].map(([, h]) => h.trim());
+  assert.deepEqual(headings, ['Education', 'Experience', 'Projects', 'Technical Skills', 'Certifications']);
 });
 
 test('project pages include their diagrams, draft status, and all eight sections', async () => {

@@ -1,0 +1,33 @@
+---
+// One Jake's Resume–style entry:
+//   Title | stack ........................ when
+//   subtitle ............................. where
+//   • bullet
+interface Props {
+  title: string;
+  href?: string;
+  stack?: string;
+  subtitle?: string;
+  when?: string;
+  where?: string;
+  bullets?: string[];
+}
+
+const { title, href, stack, subtitle, when, where, bullets = [] } = Astro.props;
+---
+<article class="entry">
+  <div class="entry-row">
+    <h3 class="entry-title">
+      {href ? <a href={href}>{title}</a> : title}
+      {stack && <span class="entry-stack"><span aria-hidden="true"> | </span><span class="visually-hidden">, built with </span>{stack}</span>}
+    </h3>
+    {when && <span class="entry-meta">{when}</span>}
+  </div>
+  {(subtitle || where) && (
+    <div class="entry-row entry-sub">
+      <em>{subtitle}</em>
+      {where && <span class="entry-meta">{where}</span>}
+    </div>
+  )}
+  {bullets.length > 0 && <ul class="entry-bullets">{bullets.map((bullet) => <li>{bullet}</li>)}</ul>}
+</article>

@@ -153,15 +153,10 @@ h1 {
 .doc-table thead tr { border-bottom: 1px solid var(--rule-strong); }
 .doc-table thead th { padding-block: .45rem; font-weight: 400; }
 .doc-table tbody tr { border-bottom: 1px solid var(--rule); }
-.project-table tbody tr:hover, .project-table tbody tr:focus-within { background: var(--wash); }
-.project-table a { font-weight: 640; }
-.project-table td:first-child, .project-table td:last-child, .threat-table td:last-child {
+.threat-table td:last-child {
   color: var(--muted);
   font: .875rem/1.5 var(--mono);
 }
-.project-table td:first-child { width: 8%; }
-.project-table td:nth-child(2) { width: 28%; }
-.project-table td:last-child { width: 16%; }
 .threat-table tbody th { width: 17%; font-weight: 640; }
 .threat-table td:nth-child(2) { width: 23%; }
 .threat-table td:last-child { width: 20%; }
@@ -264,6 +259,43 @@ figcaption { color: var(--muted); font-size: .875rem; margin-top: .65rem; }
 .snippet pre { margin: 0; padding: 1rem; overflow: auto; font: .875rem/1.6 var(--mono); }
 .snippet code { font: inherit; }
 .syntax { color: var(--accent); }
+/* Jake's Resume–style entries: title + date, subtitle + location, bullets */
+.contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 0;
+  margin-top: 1.6rem;
+  font: .875rem/1.5 var(--mono);
+}
+.contact-line a + a::before {
+  content: '|';
+  color: var(--rule-strong);
+  margin-inline: .75rem;
+  display: inline-block;
+  text-decoration: none;
+}
+.doc-section h2 { border-bottom: 1px solid var(--rule-strong); padding-bottom: .45rem; }
+.entry { max-width: none; }
+.entry-bullets { max-width: 46rem; }
+.doc-section h2 + .listing { border-top: 0; max-width: none; }
+.entry + .entry { margin-top: 1.35rem; }
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .25rem 1.5rem;
+  flex-wrap: wrap;
+}
+.entry-title { font-size: 1.0625rem; font-weight: 680; letter-spacing: -.01em; }
+.entry-title a { color: var(--ink); }
+.entry-title a:hover { color: var(--accent); }
+.entry-stack { color: var(--muted); font-weight: 400; font-style: italic; font-size: .9375rem; }
+.entry-meta { color: var(--muted); font: .8125rem/1.5 var(--mono); white-space: nowrap; }
+.entry-sub { margin-top: .1rem; }
+.entry-sub em { color: var(--text); }
+.entry-bullets { margin: .5rem 0 0; padding-left: 1.1rem; list-style: disc; }
+.entry-bullets li::marker { color: var(--accent-line); }
+.entry-bullets li + li { margin-top: .2rem; }
 .doc-pagination {
   display: flex;
   justify-content: space-between;
@@ -343,15 +375,13 @@ main:has(.doc-pagination) + .site-footer {
   .doc-table tbody { display: block; }
   .doc-table tbody tr { display: grid; gap: .4rem .55rem; padding-block: .75rem; }
   .doc-table tbody :is(th, td)[role] { width: auto; padding: 0; }
-  .project-table tbody tr { grid-template-columns: 2.35rem minmax(0, 1fr) auto; align-items: baseline; }
-  .project-table td:nth-child(3) { grid-column: 2 / -1; grid-row: 2; }
-  .project-table td:last-child { grid-column: 3; grid-row: 1; white-space: nowrap; }
-  .project-table :is(td:first-child, td:last-child) { font-size: .8125rem; }
   .threat-table td { display: grid; grid-template-columns: 6.2rem minmax(0, 1fr); gap: .5rem; }
   .threat-table td:last-child > span:last-child { font: .9375rem/1.65 var(--sans); }
   .cell-label { display: inline; color: var(--muted); font: .8125rem/1.5 var(--mono); }
   .pairs > div { grid-template-columns: minmax(5.25rem, 6.5rem) minmax(0, 1fr); }
   .split { grid-template-columns: 1fr; }
+  .contact-line { flex-direction: column; }
+  .contact-line a + a::before { display: none; }
   .pipeline { grid-template-columns: 1fr; gap: 1.4rem; }
   .pipeline li + li::before {
     top: -1.4rem;
@@ -374,6 +404,23 @@ main:has(.doc-pagination) + .site-footer {
   .doc-header { padding-block: 0 1rem; }
   .doc-section { margin-top: 1.5rem; }
   .doc-section h2 { break-after: avoid; }
-  tr, figure, .snippet { break-inside: avoid; }
+  tr, figure, .snippet, .entry { break-inside: avoid; }
   a { color: inherit; }
+  body { font-size: 10.5pt; line-height: 1.4; }
+  h1 { font-size: 24pt; letter-spacing: -.03em; }
+  .dek { font-size: 11pt; margin-top: .4rem; }
+  .eyebrow, .margin-note { display: none; }
+  .has-aside { display: block; }
+  .contact-line { margin-top: .5rem; }
+  .entry + .entry { margin-top: .6rem; }
+  .doc-section h2 { font-size: 12pt; margin-bottom: .4rem; padding-bottom: .2rem; }
+  .doc-section { margin-top: .9rem; }
+  .doc-header { padding-block: 0 .6rem; }
+  .entry-bullets { margin-top: .2rem; }
+  .entry-bullets li + li { margin-top: 0; }
+  .pairs > div { margin-block: .15rem; }
+  .listing li { padding: .2rem 0; }
+  @page { margin: .4in .5in; }
+  html { font-size: 13px; }
+  body { font-size: 10pt; line-height: 1.32; }
 }

@@ -1,0 +1,60 @@
+---
+import DocumentHeader from './DocumentHeader.astro';
+import DocumentSection from './DocumentSection.astro';
+import DefinitionList from './DefinitionList.astro';
+import ResumeEntry from './ResumeEntry.astro';
+import { profile, resume, projects, projectPath, notes, notePath } from '../data/portfolio';
+
+interface Props {
+  label: string;
+  showWriting?: boolean;
+}
+
+const { label, showWriting = false } = Astro.props;
+---
+<DocumentHeader label={label} title={profile.name} intro={profile.tagline}>
+  <p class="contact-line">
+    {resume.contact.map(([text, href]) => <a href={href}>{text}</a>)}
+  </p>
+</DocumentHeader>
+
+<DocumentSection number={1} title="Education" id="education">
+  {resume.education.map((entry) => <ResumeEntry {...entry} />)}
+</DocumentSection>
+
+<DocumentSection number={2} title="Experience" id="experience">
+  {resume.experience.map((entry) => <ResumeEntry {...entry} />)}
+</DocumentSection>
+
+<DocumentSection
+  number={3} title="Projects" id="projects"
+  note="Each project links to its full design doc: threat model, architecture, alternatives, and planned tests."
+>
+  {projects.map((project) => (
+    <ResumeEntry
+      title={project.title}
+      href={projectPath(project)}
+      stack={project.stack}
+      when={project.status}
+      bullets={[project.summary, ...project.goals.slice(0, 2)]}
+    />
+  ))}
+</DocumentSection>
+
+<DocumentSection number={4} title="Technical Skills" id="skills">
+  <DefinitionList rows={resume.skills} />
+</DocumentSection>
+
+<DocumentSection number={5} title="Certifications" id="certifications">
+  <ul class="listing prose">
+    {resume.certifications.map(([name, status]) => <li><span class="metric">{name}</span><span>{status}</span></li>)}
+  </ul>
+</DocumentSection>
+
+{showWriting && (
+  <DocumentSection number={6} title="Writing" id="writing">
+    <ul class="listing prose">
+      {notes.map((note) => <li><a href={notePath(note)}>{note.title}</a><span>Field note</span></li>)}
+    </ul>
+  </DocumentSection>
+)}
