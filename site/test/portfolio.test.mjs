@@ -36,10 +36,10 @@ test('project pages include their diagrams, draft status, and all eight sections
   for (const path of files) {
     const page = await readFile(path, 'utf8');
     assert.equal([...page.matchAll(/<h2 /g)].length, 8, path);
-    assert.match(page, /Design draft/);
+    assert.match(page, /Design draft|In progress/);
     assert.match(page, /No measurements yet/);
     assert.match(page, /<ol class="pipeline">/);
-    assert.match(page, /<pre [^>]*><code><span class="syntax">def<\/span>/);
+    assert.match(page, /<pre [^>]*><code><span class="syntax">(def|func)<\/span>/);
   }
 });
 

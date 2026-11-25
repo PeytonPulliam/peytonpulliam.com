@@ -36,7 +36,7 @@ const { label, showWriting = false } = Astro.props;
       href={projectPath(project)}
       stack={project.stack}
       when={project.status}
-      bullets={[project.summary, ...project.goals.slice(0, 2)]}
+      bullets={project.resume}
     />
   ))}
 </DocumentSection>

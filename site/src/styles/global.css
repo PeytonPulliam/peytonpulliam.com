@@ -408,19 +408,20 @@ main:has(.doc-pagination) + .site-footer {
   a { color: inherit; }
   body { font-size: 10.5pt; line-height: 1.4; }
   h1 { font-size: 24pt; letter-spacing: -.03em; }
-  .dek { font-size: 11pt; margin-top: .4rem; }
+  .dek { font-size: 10pt; margin-top: .3rem; }
   .eyebrow, .margin-note { display: none; }
   .has-aside { display: block; }
   .contact-line { margin-top: .5rem; }
   .entry + .entry { margin-top: .6rem; }
   .doc-section h2 { font-size: 12pt; margin-bottom: .4rem; padding-bottom: .2rem; }
-  .doc-section { margin-top: .9rem; }
+  .doc-section { margin-top: .65rem; }
   .doc-header { padding-block: 0 .6rem; }
   .entry-bullets { margin-top: .2rem; }
   .entry-bullets li + li { margin-top: 0; }
   .pairs > div { margin-block: .15rem; }
-  .listing li { padding: .2rem 0; }
-  @page { margin: .4in .5in; }
+  .listing li { padding: .1rem 0; }
+  @page { margin: .35in .45in; }
+  .entry-bullets, .dek, .prose, .pairs { max-width: none; }
   html { font-size: 13px; }
-  body { font-size: 10pt; line-height: 1.32; }
+  body { font-size: 10pt; line-height: 1.3; }
 }
